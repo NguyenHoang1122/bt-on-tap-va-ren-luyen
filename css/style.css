@@ -23,30 +23,3 @@ h2{
     text-align: center;
     color: blue;
 }
-body {
-    margin: 0;
-    background: #a4aab1;
-    overflow: hidden;
-    height: 100vh;
-}
-
-.snowflake {
-    position: absolute;
-    top: -10px;
-    color: white;
-    font-size: 1em;
-    user-select: none;
-    pointer-events: none;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}

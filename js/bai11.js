@@ -22,6 +22,16 @@ function checkBirthday(ngaysinh){
     let regex = /^\d{2}\/\d{2}\/\d{4}$/;
     return regex.test(ngaysinh);
 }
+function saveToLocalStorage(){
+    localStorage.setItem('student', JSON.stringify(listProduct));
+}
+function loadFromLocalStorage(){
+    let data = localStorage.getItem('student');
+    if(data){
+        listProduct = JSON.parse(data);
+        displayProducts();
+    }
+}
 function addStudent(){
     let idStudent = prompt('Nhập mã sinh viên theo định dạng HV-XXXX :');
     if(!checkIdStudent(idStudent)){
@@ -54,6 +64,7 @@ function addStudent(){
         ngaysinh : birthdayStudent,
     };
     listProduct.push(student);
+    saveToLocalStorage();
     displayProducts();
 }
 function deleteStudent(){
@@ -68,6 +79,7 @@ function deleteStudent(){
             let xacnhan = confirm('Bạn có chắc chắn muốn xóa ?');
             if(xacnhan){
                 listProduct.splice(i, 1);
+                saveToLocalStorage();
                 displayProducts();
             }
             findStudent = true;
@@ -104,6 +116,7 @@ function updateStudent(){
             listProduct[i].lop = classStudent;
             listProduct[i].email = emailStudent;
             listProduct[i].ngaysinh = birthdayStudent;
+            saveToLocalStorage();
             displayProducts();
             findStudent = true;
             break;
@@ -113,16 +126,4 @@ function updateStudent(){
         alert('Mã học viên này không tồn tại.');
     }
 }
-let snowflakes = 100;
-
-for (let i = 0; i < snowflakes; i++) {
-    let snowflake = document.createElement("div");
-    snowflake.className = "snowflake";
-    snowflake.textContent = "❄";
-    snowflake.style.left = Math.random() * window.innerWidth + "px";
-    snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
-    snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
-    snowflake.style.opacity = Math.random();
-    snowflake.style.animationDelay = Math.random() * 10 + "s";
-    document.body.appendChild(snowflake);
-}
+window.onload = loadFromLocalStorage;
