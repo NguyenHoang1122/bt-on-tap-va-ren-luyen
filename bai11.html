@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hệ thống quản lý học viên</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<h2>DANH SÁCH HỌC VIÊN CODEGYM</h2>
+<table>
+    <thead>
+    <tr>
+        <td colspan="5"><button onclick="addStudent()">Thêm mới học viên</button>
+        <button onclick="updateStudent()">Sửa thông tin học viên</button>
+        <button onclick="deleteStudent()">Xóa học viên</button> </td>
+    </tr>
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+    </tr>
+    </thead>
+    <tbody id = "container-product">
+    </tbody>
+</table>
+<script src="js/bai11.js"></script>
 </body>
 </html>
