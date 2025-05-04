@@ -73,9 +73,9 @@ function deleteStudent(){
             findStudent = true;
             break;
         }
-        if(!findStudent){
-            alert('Học viên này không tồn tại.');
-        }
+    }
+    if(!findStudent){
+        alert('Học viên này không tồn tại.');
     }
 }
 
