@@ -5,11 +5,11 @@ function displayProducts() {
     for (let i = 0; i < listProduct.length; i++) {
         let student = listProduct[i];
         let row = '<tr>';
-        row += '<td>' + student.ma + '</td>';
-        row += '<td>' + student.ten + '</td>';
-        row += '<td>' + student.lop + '</td>';
-        row += '<td>' + student.email + '</td>';
-        row += '<td>' + student.ngaysinh + '</td>';
+        row += '<td class = "id-sinhvien">' + student.ma + '</td>';
+        row += '<td class = "name-sinhvien">' + student.ten + '</td>';
+        row += '<td class = "class-sinhvien">' + student.lop + '</td>';
+        row += '<td class = "email-sinhvien">' + student.email + '</td>';
+        row += '<td class = "birthday-sinhvien">' + student.ngaysinh + '</td>';
         row += '</tr>';
         tbody.innerHTML += row;
     }
